@@ -1,12 +1,8 @@
 // src/components/TaskList/TaskItem.tsx
 import React from 'react';
 import type { Task } from '../../types/index';
+import type {TaskItemProps} from '../../types/index'
 
-export interface TaskItemProps {
-  task: Task;
-  onStatusChange: (id: string, newStatus: Task['status']) => void;
-  onDelete: (id: string) => void;
-}
 
 // Optional styles for priority colors
 const priorityStyles: Record<Task['priority'], string> = {
@@ -30,7 +26,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onStatusChange, onDele
 
         <div>
             Status:{''}
-            <span className={statusStyles[task.status]}>{task.status}</span>
+            <span className={statusStyles[task.status]}> {task.status}</span>
         </div>
 
         <div>
@@ -42,9 +38,9 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onStatusChange, onDele
       </div>
 
         <div>
-          Status:{' '}
+          Status:{''}
           <select
-            value={task.status}
+            value= {task.status}
             onChange={(e) => onStatusChange(task.id, e.target.value as Task['status'])}
             className="border rounded px-2 py-1 ml-1"
           >

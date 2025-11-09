@@ -1,4 +1,3 @@
-
 import type { TaskListProps } from '../../types/index';
 import { TaskItem } from './TaskItem';
 

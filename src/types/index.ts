@@ -41,3 +41,4 @@ export interface TaskItemProps{
     onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
     onDelete: (taskId: string) => void;
 }
+
