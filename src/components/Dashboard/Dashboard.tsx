@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import type { Task } from "../../types/index";
+import type { Task, TaskPriority, TaskStatus } from "../../types/index";
 import TaskForm from "../TaskForm/TaskForm";
 import TaskList from "../TaskList/TaskList";
 import TaskFilter from "../TaskFilter/TaskFilter";
 import { filterTasks } from "../../utils/filtering";
 import { sortTasks } from "../../utils/sorting";
 
-export const Dashboard: React.FC = () => {
+function Dashboard() {
+  const [filterStatus, setFilterStatus] = useState<'' | TaskStatus>("");
+  const [filterPriority, setFilterPriority] = useState<'' | TaskPriority>("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState("");
   const [tasks, setTasks] = useState<Task[]>([
     {
       id: "1",
@@ -52,11 +56,6 @@ export const Dashboard: React.FC = () => {
       dueDate: "2025-06-10",
     },
   ]);
-
-  const [filterStatus, setFilterStatus] = useState("");
-  const [filterPriority, setFilterPriority] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [sortBy, setSortBy] = useState("");
 
   const addTask = (taskData: Omit<Task, "id" | "createdAt">) => {
     const newTask: Task = {
@@ -161,3 +160,5 @@ export const Dashboard: React.FC = () => {
     </div>
   );
 };
+
+export default Dashboard;

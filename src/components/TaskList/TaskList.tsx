@@ -1,5 +1,5 @@
 import type { TaskListProps } from '../../types/index';
-import { TaskItem } from './TaskItem';
+import TaskItem from './TaskItem';
 
 
 function TaskList({tasks, onStatusChange, onDelete, onSortChange, searchQuery, onSearchChange}:TaskListProps ){

@@ -28,8 +28,8 @@ export interface TaskFormProps {
 }
 
 export interface TaskFilterProps {
-  filterStatus?: TaskStatus | '';
-  filterPriority?: TaskPriority | '';
+  filterStatus: TaskStatus | '';
+  filterPriority: TaskPriority | '';
   onStatusFilterChange?: (status: TaskStatus | '') => void;
   onPriorityFilterChange?: (priority: TaskPriority | '') => void;
   searchQuery?: string;

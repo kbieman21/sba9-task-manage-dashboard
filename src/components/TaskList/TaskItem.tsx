@@ -17,7 +17,7 @@ const priorityStyles: Record<Task['priority'], string> = {
     complete: "text-green-500",
   };
 
-export const TaskItem: React.FC<TaskItemProps> = ({ task, onStatusChange, onDelete }) => {
+function TaskItem({ task, onStatusChange, onDelete }:TaskItemProps) {
   return (
     <div className="bg-gray shadow-md rounded-lg p-4 mb-5 flex items-start justify-between border">
       <div className="flex flex-col">
@@ -58,3 +58,4 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onStatusChange, onDele
     </div>
   );
 };
+export default TaskItem;
