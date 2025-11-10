@@ -3,6 +3,7 @@ import type { Task, TaskPriority, TaskStatus } from '../../types/index';
 import { validateTask } from '../../utils/validation';
 import type {TaskFormProps} from '../../types/index'
 
+
 function TaskForm({ onSubmit, initialValues = {} }:TaskFormProps) {
   const [title, setTitle] = useState(initialValues.title || '');
   const [description, setDescription] = useState(initialValues.description || '');
@@ -35,12 +36,13 @@ function TaskForm({ onSubmit, initialValues = {} }:TaskFormProps) {
       <div>
         <label htmlFor="" className="block text-sm font-medium mb-1">Title</label>
         <input value={title} onChange={(e) => setTitle(e.target.value)}  className="w-full p-2.5 border border-gray-700 rounded-md bg-white-800 focus:ring-2 focus:ring-teal-400 focus:outline-none"/>
-        {errors.title && <p className="error">{errors.title}</p>}
+        {errors.title && <p className="error text-sm text-red-500">{errors.title}</p>}
       </div>
 
       <div>
         <label htmlFor="" className="block text-sm font-medium mb-1">Description</label>
         <textarea value={description} onChange={(e) => setDescription(e.target.value)}  className="w-full p-2.5 border border-gray-700 rounded-md bg-white-800 focus:ring-2 focus:ring-teal-400 focus:outline-none"/>
+        {errors.description && <p className="error text-sm text-red-500">{errors.description}</p>}
       </div>
 
       <div>
@@ -64,6 +66,7 @@ function TaskForm({ onSubmit, initialValues = {} }:TaskFormProps) {
       <div>
         <label htmlFor="" className="block text-sm font-medium mb-1">Due Date</label>
         <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)}  className="w-full p-2.5 border border-gray-700 rounded-md bg-white-800 focus:ring-2 focus:ring-teal-400 focus:outline-none"/>
+         {errors.dueDate && <p className="text-red-500 text-sm">{errors.dueDate}</p>}
       </div>
 
        <button type="submit" className="w-full mb-10 py-2.5 bg-teal-500 text-white font-semibold rounded-md hover:bg-teal-600 transition-all duration-200">Add Task</button>
