@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import{ useState } from "react";
 import type { Task, TaskPriority, TaskStatus } from "../../types/index";
 import TaskForm from "../TaskForm/TaskForm";
 import TaskList from "../TaskList/TaskList";
@@ -94,13 +94,13 @@ function Dashboard() {
     (t) => t.status === "in-progress"
   ).length;
 
-  const highPriortyTask = tasks.filter((t)=> t.priority === 'high')
-  const mediumPriortyTask = tasks.filter((t)=> t.priority === 'medium')
-  const lowPriortyTask = tasks.filter((t)=> t.priority === 'low')
+//   const highPriortyTask = tasks.filter((t)=> t.priority === 'high')
+//   const mediumPriortyTask = tasks.filter((t)=> t.priority === 'medium')
+//   const lowPriortyTask = tasks.filter((t)=> t.priority === 'low')
 
-  const handleSortChange = (sortOption: string) => {
-    setSortBy(sortOption);
-  };
+//   const handleSortChange = (sortOption: string) => {
+//     setSortBy(sortOption);
+//   };
 
   return (
     <div className="dashboard">

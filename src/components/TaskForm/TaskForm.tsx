@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Task, TaskPriority, TaskStatus } from '../../types/index';
+import type {TaskPriority, TaskStatus } from '../../types/index';
 import { validateTask } from '../../utils/validation';
 import type {TaskFormProps} from '../../types/index'
 

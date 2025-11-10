@@ -1,5 +1,4 @@
 // src/components/TaskList/TaskItem.tsx
-import React from 'react';
 import type { Task } from '../../types/index';
 import type {TaskItemProps} from '../../types/index'
 

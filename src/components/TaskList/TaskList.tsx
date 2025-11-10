@@ -6,13 +6,13 @@ function TaskList({tasks, onStatusChange, onDelete, onSortChange, searchQuery, o
   return (
     <div className="task-list">
       <div className="task-list__controls">
-        {/* <input
+        <input
           type="text"
-          placeholder="Search tasks..."
+         
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           
-        /> */}
+        />
         
         <select onChange={(e) => onSortChange(e.target.value)} className='flex justify-end border mb-1'>
           <option value="">Sort By</option>
